@@ -1,0 +1,56 @@
+/* =========================
+   GLOBAL RESET & BASE SETUP
+   ========================= */
+
+/*
+  The universal selector (*) targets ALL elements in the app.
+  We also include ::before and ::after pseudo-elements to ensure
+  consistent behavior for elements that use them.
+
+  Why include ::before and ::after?
+  - These are "virtual" elements used for styling (like icons, overlays, etc.)
+  - If we don't include them, they may behave differently from normal elements
+  - This can cause layout bugs later
+
+  So this line ensures EVERYTHING behaves consistently.
+*/
+*,
+*::before,
+*::after {
+  
+  /*
+    Remove default margin added by browsers.
+    Example:
+    - <body> has ~8px margin by default
+    - <h1>, <p> also have built-in spacing
+
+    Resetting this gives us full control over spacing.
+  */
+  margin: 0;
+
+  /*
+    Remove default padding from elements.
+    Example:
+    - <ul> has left padding
+    - <button> has default padding
+
+    This ensures we style spacing manually.
+  */
+  padding: 0;
+
+  /*
+    VERY IMPORTANT:
+    Changes how width and height are calculated.
+
+    Default (content-box):
+    width = content only
+    padding + border are added outside → breaks layout
+
+    border-box:
+    width = content + padding + border
+    → keeps layout predictable
+
+    Always use border-box in modern CSS.
+  */
+  box-sizing: border-box;
+}
