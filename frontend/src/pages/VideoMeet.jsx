@@ -31,9 +31,9 @@ import MicOffIcon from "@mui/icons-material/MicOff";
 import ScreenShareIcon from "@mui/icons-material/ScreenShare";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
-//import server from '../environment';
+import server from '../environment'
 
-const server_url = "http://localhost:4000"; // this is signal server url, it can be same as server url of the app or different,
+const server_url = server; // this is signal server url, it can be same as server url of the app or different,
 // but it should be running and should have socket.io server running on it
 
 var connections = {}; // this object will hold all the peer connections, indexed by socket id of the peer

@@ -2,13 +2,14 @@ import axios from "axios";
 import httpStatus from "http-status";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import server from "../environment.js";
 
 
 
 export const AuthContext = createContext({});
 
 const client = axios.create({
-    baseURL: "http://localhost:4000/api/v1/users"
+    baseURL: `${server}/api/v1/users`
 })
 //useContext() is a React Hook that lets you access shared data (global state) 
 // without passing props manually through every component.
